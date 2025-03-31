@@ -1,17 +1,21 @@
 {
-    "version": 1,
-    "author": "Tarachan Rana",
-    "editor": "wokwi",
-    "parts": [
-      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 19.2, "left": -100.76, "attrs": {} },
-      { "type": "wokwi-servo", "id": "servo1", "top": 65.2, "left": 57.6, "attrs": {} }
-    ],
-    "connections": [
-      [ "esp:TX", "$serialMonitor:RX", "", [] ],
-      [ "esp:RX", "$serialMonitor:TX", "", [] ],
-      [ "servo1:V+", "esp:3V3", "red", [ "h-19.2", "v0.1", "h0", "v-96", "h-144", "v19.2" ] ],
-      [ "servo1:GND", "esp:GND.2", "black", [ "h0", "v-76.8", "h-57.6" ] ],
-      [ "servo1:PWM", "esp:13", "yellow", [ "h-163.2", "v48.2" ] ]
-    ],
-    "dependencies": {}
-  }
+  "version": 1,
+  "author": "Tarachan Rana",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 19.2, "left": -100.76, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 65.2, "left": 57.6, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 42.4, "left": -324.18, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "servo1:V+", "esp:3V3", "red", [ "h-19.2", "v0.1", "h0", "v-96", "h-144", "v19.2" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h0", "v-76.8", "h-57.6" ] ],
+    [ "servo1:PWM", "esp:13", "yellow", [ "h-163.2", "v48.2" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v38.4", "h172.54" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pir1:OUT", "esp:27", "green", [ "v28.8", "h124.66", "v-19.2" ] ]
+  ],
+  "dependencies": {}
+}
